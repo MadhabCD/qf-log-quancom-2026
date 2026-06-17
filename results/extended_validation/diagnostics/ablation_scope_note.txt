@@ -1,0 +1,1 @@
+Ablation and single-feature testing apply to Logistic Regression, Random Forest, and XGBoost. The threshold baseline is included in multi-seed validation only, because removal of its required rule variables would define a different baseline.

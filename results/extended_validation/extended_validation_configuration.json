@@ -1,0 +1,42 @@
+{
+  "observable_features": [
+    "qber",
+    "photon_count",
+    "latency_ms",
+    "abort_flag"
+  ],
+  "class_labels": [
+    "normal",
+    "partial_intercept_resend",
+    "detector_blind",
+    "fiber_tap"
+  ],
+  "fixed_holdout_seed": 42,
+  "fixed_holdout_test_fraction": 0.25,
+  "validation_seeds": [
+    1,
+    7,
+    21,
+    42,
+    99
+  ],
+  "validation_folds": 5,
+  "logistic_max_iter": 1000,
+  "random_forest_n_estimators": 300,
+  "random_forest_max_depth": 14,
+  "xgboost_n_estimators": 400,
+  "xgboost_max_depth": 10,
+  "xgboost_learning_rate": 0.08,
+  "xgboost_subsample": 0.9,
+  "xgboost_colsample_bytree": 0.9,
+  "root": "C:\\Users\\madha\\OneDrive\\Desktop\\QKD QF-Log Forensic",
+  "dataset": "C:\\Users\\madha\\OneDrive\\Desktop\\QKD QF-Log Forensic\\data\\qf_log_dataset.csv",
+  "requested_stages": [
+    "stability"
+  ],
+  "diagnostic_samples_per_class": null,
+  "cv_samples_per_class": null,
+  "n_jobs": 4,
+  "xgb_device": "cpu",
+  "scope_note": "Ablation and single-feature testing apply to Logistic Regression, Random Forest, and XGBoost. The threshold baseline is included in multi-seed validation only, because removal of its required rule variables would define a different baseline."
+}

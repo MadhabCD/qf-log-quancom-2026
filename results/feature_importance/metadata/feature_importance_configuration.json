@@ -1,0 +1,21 @@
+{
+  "dataset": "C:\\Users\\madha\\OneDrive\\Desktop\\QKD QF-Log Forensic\\data\\qf_log_dataset.csv",
+  "features": [
+    "qber",
+    "photon_count",
+    "latency_ms",
+    "abort_flag"
+  ],
+  "class_labels": [
+    "normal",
+    "partial_intercept_resend",
+    "detector_blind",
+    "fiber_tap"
+  ],
+  "holdout_seed": 42,
+  "test_size": 0.25,
+  "diagnostic_samples_per_class": 25000,
+  "permutation_repeats": 10,
+  "primary_importance_method": "heldout_permutation_macro_f1_decrease",
+  "native_importance_is_supplementary": true
+}

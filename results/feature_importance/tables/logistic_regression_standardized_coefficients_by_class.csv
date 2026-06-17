@@ -1,0 +1,17 @@
+model,class_label,feature,standardized_coefficient,absolute_standardized_coefficient
+Logistic_Regression,normal,qber,0.052738268376154876,0.052738268376154876
+Logistic_Regression,normal,photon_count,1.0781330981028963,1.0781330981028963
+Logistic_Regression,normal,latency_ms,-2.590134444669641,2.590134444669641
+Logistic_Regression,normal,abort_flag,-0.22503196553825688,0.22503196553825688
+Logistic_Regression,partial_intercept_resend,qber,5.74634603745449,5.74634603745449
+Logistic_Regression,partial_intercept_resend,photon_count,1.2146775084235855,1.2146775084235855
+Logistic_Regression,partial_intercept_resend,latency_ms,-2.836949381727141,2.836949381727141
+Logistic_Regression,partial_intercept_resend,abort_flag,-0.13004454966221632,0.13004454966221632
+Logistic_Regression,detector_blind,qber,-2.625262976760654,2.625262976760654
+Logistic_Regression,detector_blind,photon_count,-1.7672496588277788,1.7672496588277788
+Logistic_Regression,detector_blind,latency_ms,3.6994144336807873,3.6994144336807873
+Logistic_Regression,detector_blind,abort_flag,0.48761224023977334,0.48761224023977334
+Logistic_Regression,fiber_tap,qber,-3.1738213290700013,3.1738213290700013
+Logistic_Regression,fiber_tap,photon_count,-0.5255609476986887,0.5255609476986887
+Logistic_Regression,fiber_tap,latency_ms,1.727669392716014,1.727669392716014
+Logistic_Regression,fiber_tap,abort_flag,-0.1325357250392769,0.1325357250392769

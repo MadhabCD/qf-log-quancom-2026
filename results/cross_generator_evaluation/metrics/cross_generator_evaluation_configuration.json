@@ -1,0 +1,29 @@
+{
+  "observable_features": [
+    "qber",
+    "photon_count",
+    "latency_ms",
+    "abort_flag"
+  ],
+  "class_labels": [
+    "normal",
+    "partial_intercept_resend",
+    "detector_blind",
+    "fiber_tap"
+  ],
+  "training_generator": "Generator-A",
+  "external_test_generator": "Generator-B",
+  "generator_a_training_fraction": 0.75,
+  "generator_a_holdout_fraction": 0.25,
+  "generator_a_partition_seed": 42,
+  "external_test_policy": "Generator-B is used only for external testing; no fitting or tuning is performed on it.",
+  "logistic_max_iter": 1000,
+  "random_forest_n_estimators": 300,
+  "random_forest_max_depth": 14,
+  "xgboost_n_estimators": 400,
+  "xgboost_max_depth": 10,
+  "xgboost_learning_rate": 0.08,
+  "xgboost_subsample": 0.9,
+  "xgboost_colsample_bytree": 0.9,
+  "model_source": "saved"
+}

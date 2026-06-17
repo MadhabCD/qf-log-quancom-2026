@@ -1,0 +1,10 @@
+{
+  "detector_blind_photon_threshold": 567.0,
+  "partial_intercept_resend_qber_threshold": 0.03747549559921026,
+  "fiber_tap_photon_threshold": 868.0,
+  "normal_qber_training_median": 0.018018020316958427,
+  "partial_intercept_resend_qber_training_median": 0.0569329708814621,
+  "normal_photon_training_median": 975.0,
+  "fiber_tap_photon_training_median": 761.0,
+  "detector_blind_photon_training_median": 373.0
+}

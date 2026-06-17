@@ -1,0 +1,9 @@
+partition,label,samples
+training,normal,937500
+training,partial_intercept_resend,937500
+training,detector_blind,937500
+training,fiber_tap,937500
+test,normal,312500
+test,partial_intercept_resend,312500
+test,detector_blind,312500
+test,fiber_tap,312500

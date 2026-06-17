@@ -1,0 +1,37 @@
+2026-05-26 15:32:35,737 | INFO | Cross-generator protocol: train/fitted on Generator-A only; test on Generator-B only.
+2026-05-26 15:32:35,738 | INFO | Loading Generator-A dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\qf_log_dataset.csv
+2026-05-26 15:32:40,420 | INFO | Generator-A loaded: 5,000,000 rows. Class counts: {'normal': 1250000, 'partial_intercept_resend': 1250000, 'detector_blind': 1250000, 'fiber_tap': 1250000}
+2026-05-26 15:32:40,421 | INFO | Loading Generator-B dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\generator_b_qf_log_dataset.csv
+2026-05-26 15:32:44,574 | INFO | Generator-B loaded: 5,000,000 rows. Class counts: {'normal': 1250000, 'partial_intercept_resend': 1250000, 'detector_blind': 1250000, 'fiber_tap': 1250000}
+2026-05-26 15:32:52,934 | INFO | Saved observable feature-distribution shift table.
+2026-05-26 15:32:57,617 | INFO | Loaded saved Generator-A methods from completed fixed-holdout evaluation.
+2026-05-26 15:32:57,632 | INFO | Applying Generator-A-trained Transparent Threshold Baseline to Generator-B.
+2026-05-26 15:33:01,405 | INFO | Transparent Threshold Baseline on Generator-B: Accuracy=0.529653 Macro-F1=0.508302 MCC=0.385788.
+2026-05-26 15:33:01,405 | INFO | Applying Generator-A-trained Logistic Regression to Generator-B.
+2026-05-26 15:33:12,564 | INFO | Logistic Regression on Generator-B: Accuracy=0.584449 Macro-F1=0.564539 MCC=0.458000.
+2026-05-26 15:33:12,569 | INFO | Applying Generator-A-trained Random Forest to Generator-B.
+2026-05-26 15:34:41,927 | INFO | Random Forest on Generator-B: Accuracy=0.581395 Macro-F1=0.566880 MCC=0.453446.
+2026-05-26 15:34:41,934 | INFO | Applying Generator-A-trained XGBoost to Generator-B.
+2026-05-26 15:35:40,269 | INFO | XGBoost on Generator-B: Accuracy=0.581008 Macro-F1=0.566517 MCC=0.452877.
+2026-05-26 15:35:40,322 | INFO | Loading Generator-B metadata for profile and temporal-window diagnostics: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\generator_b_full_metadata.csv.gz
+2026-05-26 15:36:00,670 | INFO | Saved Generator-B hardware-profile and temporal-window diagnostics.
+2026-05-26 15:36:08,675 | INFO | Saved optional standardised PCA diagnostics.
+2026-05-26 15:36:08,679 | INFO | Generator-B external performance summary:
+                         model test_dataset  accuracy  balanced_accuracy  macro_precision  macro_recall  macro_f1  weighted_f1      mcc  macro_roc_auc_ovr  macro_pr_auc_ovr  predict_seconds
+Transparent_Threshold_Baseline  Generator-B  0.529653           0.529653         0.552518      0.529653  0.508302     0.508302 0.385788                NaN               NaN         0.029532
+           Logistic_Regression  Generator-B  0.584449           0.584449         0.604206      0.584449  0.564539     0.564539 0.458000           0.854697          0.670772         0.767084
+                 Random_Forest  Generator-B  0.581395           0.581395         0.605528      0.581395  0.566880     0.566880 0.453446           0.850725          0.666128        79.420935
+                       XGBoost  Generator-B  0.581008           0.581008         0.604884      0.581008  0.566517     0.566517 0.452877           0.850358          0.664619        48.514460
+2026-05-26 15:36:08,682 | INFO | A-holdout versus B-external degradation summary:
+                         model  accuracy_generator_a_holdout  accuracy_generator_b_external  accuracy_absolute_change  macro_f1_generator_a_holdout  macro_f1_generator_b_external  macro_f1_absolute_change
+Transparent_Threshold_Baseline                      0.746136                       0.529653                 -0.216483                      0.752428                       0.508302                 -0.244126
+           Logistic_Regression                      0.819708                       0.584449                 -0.235259                      0.821106                       0.564539                 -0.256567
+                 Random_Forest                      0.822722                       0.581395                 -0.241328                      0.824246                       0.566880                 -0.257365
+                       XGBoost                      0.822750                       0.581008                 -0.241743                      0.824280                       0.566517                 -0.257763
+2026-05-26 15:36:08,683 | INFO | Generator-B McNemar comparisons:
+            model_a                        model_b  model_a_only_correct  model_b_only_correct  discordant_predictions                                          test    statistic      p_value
+Logistic_Regression Transparent_Threshold_Baseline                669993                396013                 1066006 McNemar chi-square with continuity correction 70416.575930 0.000000e+00
+      Random_Forest Transparent_Threshold_Baseline                666870                408164                 1075034 McNemar chi-square with continuity correction 62256.893294 0.000000e+00
+            XGBoost Transparent_Threshold_Baseline                670594                413822                 1084416 McNemar chi-square with continuity correction 60798.942879 0.000000e+00
+      Random_Forest                        XGBoost                 46436                 44502                   90938 McNemar chi-square with continuity correction    41.088313 1.455038e-10
+2026-05-26 15:36:08,684 | INFO | Cross-generator evaluation completed. Outputs: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\cross_generator_evaluation

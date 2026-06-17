@@ -1,0 +1,40 @@
+2026-05-26 05:03:38,793 | INFO | Loading dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\qf_log_dataset.csv
+2026-05-26 05:03:42,623 | INFO | Dataset loaded: 5,000,000 rows and 4 observable features.
+2026-05-26 05:03:42,625 | INFO | Class distribution:
+                   label  samples
+                  normal  1250000
+partial_intercept_resend  1250000
+          detector_blind  1250000
+               fiber_tap  1250000
+2026-05-26 05:03:42,685 | INFO | Creating stratified 75/25 holdout partition with random seed 42.
+2026-05-26 05:03:44,365 | INFO | Training rows: 3,750,000 | Test rows: 1,250,000
+2026-05-26 05:03:48,823 | INFO | Transparent threshold baseline completed. Accuracy=0.746136 Macro-F1=0.752428
+2026-05-26 05:03:48,824 | INFO | Training Logistic Regression.
+2026-05-26 05:04:19,412 | INFO | Logistic Regression completed. Accuracy=0.819708 Macro-F1=0.821106 MCC=0.759994.
+2026-05-26 05:04:19,413 | INFO | Training Random Forest.
+2026-05-26 05:19:23,251 | INFO | Random Forest completed. Accuracy=0.822722 Macro-F1=0.824246 MCC=0.764752.
+2026-05-26 05:19:23,252 | INFO | Training XGBoost.
+2026-05-26 05:26:13,480 | INFO | XGBoost completed. Accuracy=0.822750 Macro-F1=0.824280 MCC=0.764761.
+2026-05-26 05:26:16,718 | INFO | Single-feature audit: qber | accuracy=0.497918 macro_f1=0.431489
+2026-05-26 05:26:19,352 | INFO | Single-feature audit: photon_count | accuracy=0.542631 macro_f1=0.527752
+2026-05-26 05:26:23,988 | INFO | Single-feature audit: latency_ms | accuracy=0.586028 macro_f1=0.581673
+2026-05-26 05:26:24,460 | INFO | Single-feature audit: abort_flag | accuracy=0.401767 macro_f1=0.294307
+2026-05-26 05:26:24,466 | INFO | Holdout evaluation summary:
+                         model  accuracy  balanced_accuracy  macro_precision  macro_recall  macro_f1  weighted_f1      mcc  macro_roc_auc_ovr  macro_pr_auc_ovr  fit_predict_seconds
+Transparent_Threshold_Baseline  0.746136           0.746136         0.765352      0.746136  0.752428     0.752428 0.663406                NaN               NaN             0.013298
+           Logistic_Regression  0.819708           0.819708         0.823765      0.819708  0.821106     0.821106 0.759994           0.958533          0.881910            12.327992
+                 Random_Forest  0.822722           0.822722         0.829329      0.822722  0.824246     0.824246 0.764752           0.959538          0.883766           862.362100
+                       XGBoost  0.822750           0.822750         0.829283      0.822750  0.824280     0.824280 0.764761           0.959470          0.883461           393.495768
+2026-05-26 05:26:24,467 | INFO | McNemar comparison summary:
+            model_a                        model_b  model_a_only_correct  model_b_only_correct  discordant_predictions                                          test    statistic  p_value
+Logistic_Regression Transparent_Threshold_Baseline                156560                 64595                  221155 McNemar chi-square with continuity correction 38241.854337 0.000000
+      Random_Forest Transparent_Threshold_Baseline                152888                 57155                  210043 McNemar chi-square with continuity correction 43632.093543 0.000000
+            XGBoost Transparent_Threshold_Baseline                153231                 57463                  210694 McNemar chi-square with continuity correction 43529.090952 0.000000
+      Random_Forest                        XGBoost                  5478                  5513                   10991 McNemar chi-square with continuity correction     0.105177 0.745703
+2026-05-26 05:26:24,469 | INFO | Single-feature shortcut diagnostic:
+     feature  accuracy  balanced_accuracy  macro_precision  macro_recall  macro_f1  weighted_f1      mcc  macro_roc_auc_ovr  macro_pr_auc_ovr
+        qber  0.497918           0.497918         0.413675      0.497918  0.431489     0.431489 0.373909                NaN               NaN
+photon_count  0.542631           0.542631         0.550113      0.542631  0.527752     0.527752 0.400636                NaN               NaN
+  latency_ms  0.586028           0.586028         0.587481      0.586028  0.581673     0.581673 0.450503                NaN               NaN
+  abort_flag  0.401767           0.401767         0.290070      0.401767  0.294307     0.294307 0.324236                NaN               NaN
+2026-05-26 05:26:24,469 | INFO | Model evaluation completed. Results folder: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\model_evaluation

@@ -1,0 +1,13 @@
+model,feature,importance_method,importance_mean,importance_std,diagnostic_samples,n_repeats,runtime_seconds,rank_within_model
+Logistic_Regression,qber,heldout_permutation_macro_f1_decrease,0.30471326727690073,0.0011161703526027592,100000,10,0.556042600015644,1
+Logistic_Regression,latency_ms,heldout_permutation_macro_f1_decrease,0.2624072837389942,0.0011088142193110533,100000,10,0.556042600015644,2
+Logistic_Regression,photon_count,heldout_permutation_macro_f1_decrease,0.09012288944101969,0.0010769870899164384,100000,10,0.556042600015644,3
+Logistic_Regression,abort_flag,heldout_permutation_macro_f1_decrease,0.009579194585668615,0.00041345545551843966,100000,10,0.556042600015644,4
+Random_Forest,qber,heldout_permutation_macro_f1_decrease,0.29504439795896426,0.0010097569736726957,100000,10,41.624228700005915,1
+Random_Forest,latency_ms,heldout_permutation_macro_f1_decrease,0.24220025264809303,0.0011358744144511828,100000,10,41.624228700005915,2
+Random_Forest,photon_count,heldout_permutation_macro_f1_decrease,0.14794600773153782,0.0009380272891015697,100000,10,41.624228700005915,3
+Random_Forest,abort_flag,heldout_permutation_macro_f1_decrease,0.0023771861084406986,0.00023345267096801,100000,10,41.624228700005915,4
+XGBoost,qber,heldout_permutation_macro_f1_decrease,0.3001994038201008,0.0010462426875358722,100000,10,29.718369300011545,1
+XGBoost,latency_ms,heldout_permutation_macro_f1_decrease,0.2575737698957374,0.0010042857163606107,100000,10,29.718369300011545,2
+XGBoost,photon_count,heldout_permutation_macro_f1_decrease,0.13617597538690748,0.0007940496148972508,100000,10,29.718369300011545,3
+XGBoost,abort_flag,heldout_permutation_macro_f1_decrease,0.0034622478586059493,0.0004974269793761258,100000,10,29.718369300011545,4

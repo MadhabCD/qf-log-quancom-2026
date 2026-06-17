@@ -1,0 +1,13 @@
+model,feature,importance_method,native_importance,native_importance_normalized,rank_within_model
+Logistic_Regression,qber,mean_absolute_standardized_coefficient,2.899542152915325,0.41402539094115054,1
+Logistic_Regression,latency_ms,mean_absolute_standardized_coefficient,2.7135419131983958,0.38746643166321026,2
+Logistic_Regression,photon_count,mean_absolute_standardized_coefficient,1.1464053032632373,0.16369512110156617,3
+Logistic_Regression,abort_flag,mean_absolute_standardized_coefficient,0.24380612011988087,0.03481305629407298,4
+Random_Forest,qber,impurity_based_importance,0.35768161862373477,0.3576816186237347,1
+Random_Forest,photon_count,impurity_based_importance,0.33558280498590554,0.3355828049859055,2
+Random_Forest,latency_ms,impurity_based_importance,0.27971667335101963,0.2797166733510196,3
+Random_Forest,abort_flag,impurity_based_importance,0.0270189030393401,0.027018903039340094,4
+XGBoost,qber,gain_importance,72.81574249267578,0.2855451992373897,1
+XGBoost,abort_flag,gain_importance,68.30780029296875,0.26786741130993075,2
+XGBoost,latency_ms,gain_importance,62.61497116088867,0.24554311750893396,3
+XGBoost,photon_count,gain_importance,51.26749801635742,0.20104427194374558,4

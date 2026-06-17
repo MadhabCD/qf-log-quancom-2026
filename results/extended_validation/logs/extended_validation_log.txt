@@ -1,0 +1,242 @@
+2026-05-26 05:36:45,774 | INFO | Loading dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\qf_log_dataset.csv
+2026-05-26 05:36:49,230 | INFO | Dataset loaded: 5,000,000 rows. Class counts: {0: 1250000, 1: 1250000, 2: 1250000, 3: 1250000}
+2026-05-26 05:36:49,232 | INFO | Ablation and single-feature evaluation will use the complete dataset: 5,000,000 rows.
+2026-05-26 05:36:49,254 | INFO | Imported completed full-feature holdout row for Logistic_Regression.
+2026-05-26 05:36:49,256 | INFO | Imported completed full-feature holdout row for Random_Forest.
+2026-05-26 05:36:49,258 | INFO | Imported completed full-feature holdout row for XGBoost.
+2026-05-26 05:36:50,880 | INFO | Running ablation: Logistic_Regression | without qber
+2026-05-26 05:37:00,505 | INFO | Completed: Logistic_Regression | without_qber | macro_f1=0.740118
+2026-05-26 05:37:00,505 | INFO | Running ablation: Logistic_Regression | without photon_count
+2026-05-26 05:37:11,714 | INFO | Completed: Logistic_Regression | without_photon_count | macro_f1=0.803793
+2026-05-26 05:37:11,714 | INFO | Running ablation: Logistic_Regression | without latency_ms
+2026-05-26 05:37:20,472 | INFO | Completed: Logistic_Regression | without_latency_ms | macro_f1=0.765964
+2026-05-26 05:37:20,472 | INFO | Running ablation: Logistic_Regression | without abort_flag
+2026-05-26 05:37:32,003 | INFO | Completed: Logistic_Regression | without_abort_flag | macro_f1=0.819486
+2026-05-26 05:37:32,003 | INFO | Running ablation: Random_Forest | without qber
+2026-05-26 05:45:16,586 | INFO | Completed: Random_Forest | without_qber | macro_f1=0.743448
+2026-05-26 05:45:16,586 | INFO | Running ablation: Random_Forest | without photon_count
+2026-05-26 05:54:10,133 | INFO | Completed: Random_Forest | without_photon_count | macro_f1=0.807241
+2026-05-26 05:54:10,133 | INFO | Running ablation: Random_Forest | without latency_ms
+2026-05-26 06:00:35,541 | INFO | Completed: Random_Forest | without_latency_ms | macro_f1=0.769308
+2026-05-26 06:00:35,541 | INFO | Running ablation: Random_Forest | without abort_flag
+2026-05-26 06:08:18,077 | INFO | Completed: Random_Forest | without_abort_flag | macro_f1=0.823674
+2026-05-26 06:08:18,077 | INFO | Running ablation: XGBoost | without qber
+2026-05-26 06:13:16,902 | INFO | Completed: XGBoost | without_qber | macro_f1=0.743718
+2026-05-26 06:13:16,902 | INFO | Running ablation: XGBoost | without photon_count
+2026-05-26 06:18:25,602 | INFO | Completed: XGBoost | without_photon_count | macro_f1=0.806969
+2026-05-26 06:18:25,603 | INFO | Running ablation: XGBoost | without latency_ms
+2026-05-26 06:23:21,134 | INFO | Completed: XGBoost | without_latency_ms | macro_f1=0.769603
+2026-05-26 06:23:21,134 | INFO | Running ablation: XGBoost | without abort_flag
+2026-05-26 06:29:15,668 | INFO | Completed: XGBoost | without_abort_flag | macro_f1=0.823350
+2026-05-26 06:29:15,669 | INFO | All-model leave-one-feature-out ablation saved: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\extended_validation\diagnostics\all_model_leave_one_feature_out_ablation.csv
+2026-05-26 06:29:17,346 | INFO | Running single-feature evaluation: Logistic_Regression | only qber
+2026-05-26 06:29:24,114 | INFO | Completed: Logistic_Regression | only qber | macro_f1=0.481138
+2026-05-26 06:29:24,114 | INFO | Running single-feature evaluation: Logistic_Regression | only photon_count
+2026-05-26 06:29:30,370 | INFO | Completed: Logistic_Regression | only photon_count | macro_f1=0.535592
+2026-05-26 06:29:30,370 | INFO | Running single-feature evaluation: Logistic_Regression | only latency_ms
+2026-05-26 06:29:37,816 | INFO | Completed: Logistic_Regression | only latency_ms | macro_f1=0.580032
+2026-05-26 06:29:37,816 | INFO | Running single-feature evaluation: Logistic_Regression | only abort_flag
+2026-05-26 06:29:43,992 | INFO | Completed: Logistic_Regression | only abort_flag | macro_f1=0.294307
+2026-05-26 06:29:43,992 | INFO | Running single-feature evaluation: Random_Forest | only qber
+2026-05-26 06:38:34,804 | INFO | Completed: Random_Forest | only qber | macro_f1=0.501355
+2026-05-26 06:38:34,805 | INFO | Running single-feature evaluation: Random_Forest | only photon_count
+2026-05-26 06:42:55,432 | INFO | Completed: Random_Forest | only photon_count | macro_f1=0.548482
+2026-05-26 06:42:55,432 | INFO | Running single-feature evaluation: Random_Forest | only latency_ms
+2026-05-26 06:55:02,853 | INFO | Completed: Random_Forest | only latency_ms | macro_f1=0.583504
+2026-05-26 06:55:02,853 | INFO | Running single-feature evaluation: Random_Forest | only abort_flag
+2026-05-26 06:55:42,045 | INFO | Completed: Random_Forest | only abort_flag | macro_f1=0.294307
+2026-05-26 06:55:42,045 | INFO | Running single-feature evaluation: XGBoost | only qber
+2026-05-26 07:00:16,201 | INFO | Completed: XGBoost | only qber | macro_f1=0.485510
+2026-05-26 07:00:16,201 | INFO | Running single-feature evaluation: XGBoost | only photon_count
+2026-05-26 07:04:47,791 | INFO | Completed: XGBoost | only photon_count | macro_f1=0.547838
+2026-05-26 07:04:47,791 | INFO | Running single-feature evaluation: XGBoost | only latency_ms
+2026-05-26 07:09:23,134 | INFO | Completed: XGBoost | only latency_ms | macro_f1=0.583376
+2026-05-26 07:09:23,134 | INFO | Running single-feature evaluation: XGBoost | only abort_flag
+2026-05-26 07:11:46,061 | INFO | Completed: XGBoost | only abort_flag | macro_f1=0.294307
+2026-05-26 07:11:46,061 | INFO | All-model single-feature evaluation saved: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\extended_validation\diagnostics\all_model_single_feature_evaluation.csv
+2026-05-26 07:11:46,091 | INFO | Requested extended validation stages completed. Outputs: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\extended_validation
+2026-05-26 07:20:56,364 | INFO | Loading dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\qf_log_dataset.csv
+2026-05-26 07:20:59,875 | INFO | Dataset loaded: 5,000,000 rows. Class counts: {0: 1250000, 1: 1250000, 2: 1250000, 3: 1250000}
+2026-05-26 07:20:59,879 | INFO | Multi-seed stratified cross-validation will use the complete dataset: 5,000,000 rows.
+2026-05-26 07:21:00,586 | INFO | Stability: threshold baseline | seed=1 fold=1/5
+2026-05-26 07:21:01,094 | INFO | Stability: Logistic_Regression | seed=1 fold=1/5
+2026-05-26 07:21:15,984 | INFO | Completed stability: Logistic_Regression | seed=1 fold=1 | macro_f1=0.821612
+2026-05-26 07:21:15,984 | INFO | Stability: Random_Forest | seed=1 fold=1/5
+2026-05-26 07:31:35,768 | INFO | Completed stability: Random_Forest | seed=1 fold=1 | macro_f1=0.824690
+2026-05-26 07:31:35,768 | INFO | Stability: XGBoost | seed=1 fold=1/5
+2026-05-26 07:37:20,412 | INFO | Completed stability: XGBoost | seed=1 fold=1 | macro_f1=0.824578
+2026-05-26 07:37:20,578 | INFO | Stability: threshold baseline | seed=1 fold=2/5
+2026-05-26 07:37:20,950 | INFO | Stability: Logistic_Regression | seed=1 fold=2/5
+2026-05-26 07:37:35,840 | INFO | Completed stability: Logistic_Regression | seed=1 fold=2 | macro_f1=0.820584
+2026-05-26 07:37:35,841 | INFO | Stability: Random_Forest | seed=1 fold=2/5
+2026-05-26 07:47:51,932 | INFO | Completed stability: Random_Forest | seed=1 fold=2 | macro_f1=0.824219
+2026-05-26 07:47:51,932 | INFO | Stability: XGBoost | seed=1 fold=2/5
+2026-05-26 07:53:37,411 | INFO | Completed stability: XGBoost | seed=1 fold=2 | macro_f1=0.824141
+2026-05-26 07:53:37,557 | INFO | Stability: threshold baseline | seed=1 fold=3/5
+2026-05-26 07:53:37,951 | INFO | Stability: Logistic_Regression | seed=1 fold=3/5
+2026-05-26 07:53:53,123 | INFO | Completed stability: Logistic_Regression | seed=1 fold=3 | macro_f1=0.821699
+2026-05-26 07:53:53,123 | INFO | Stability: Random_Forest | seed=1 fold=3/5
+2026-05-26 08:04:07,355 | INFO | Completed stability: Random_Forest | seed=1 fold=3 | macro_f1=0.824752
+2026-05-26 08:04:07,355 | INFO | Stability: XGBoost | seed=1 fold=3/5
+2026-05-26 08:09:53,264 | INFO | Completed stability: XGBoost | seed=1 fold=3 | macro_f1=0.824522
+2026-05-26 08:09:53,413 | INFO | Stability: threshold baseline | seed=1 fold=4/5
+2026-05-26 08:09:53,778 | INFO | Stability: Logistic_Regression | seed=1 fold=4/5
+2026-05-26 08:10:08,637 | INFO | Completed stability: Logistic_Regression | seed=1 fold=4 | macro_f1=0.820707
+2026-05-26 08:10:08,637 | INFO | Stability: Random_Forest | seed=1 fold=4/5
+2026-05-26 08:20:23,264 | INFO | Completed stability: Random_Forest | seed=1 fold=4 | macro_f1=0.824256
+2026-05-26 08:20:23,264 | INFO | Stability: XGBoost | seed=1 fold=4/5
+2026-05-26 08:26:10,426 | INFO | Completed stability: XGBoost | seed=1 fold=4 | macro_f1=0.824117
+2026-05-26 08:26:10,576 | INFO | Stability: threshold baseline | seed=1 fold=5/5
+2026-05-26 08:26:10,939 | INFO | Stability: Logistic_Regression | seed=1 fold=5/5
+2026-05-26 08:26:25,887 | INFO | Completed stability: Logistic_Regression | seed=1 fold=5 | macro_f1=0.821262
+2026-05-26 08:26:25,887 | INFO | Stability: Random_Forest | seed=1 fold=5/5
+2026-05-26 08:36:44,714 | INFO | Completed stability: Random_Forest | seed=1 fold=5 | macro_f1=0.824270
+2026-05-26 08:36:44,714 | INFO | Stability: XGBoost | seed=1 fold=5/5
+2026-05-26 08:42:34,370 | INFO | Completed stability: XGBoost | seed=1 fold=5 | macro_f1=0.824162
+2026-05-26 08:42:34,875 | INFO | Stability: threshold baseline | seed=7 fold=1/5
+2026-05-26 08:42:35,227 | INFO | Stability: Logistic_Regression | seed=7 fold=1/5
+2026-05-26 08:42:49,903 | INFO | Completed stability: Logistic_Regression | seed=7 fold=1 | macro_f1=0.821134
+2026-05-26 08:42:49,904 | INFO | Stability: Random_Forest | seed=7 fold=1/5
+2026-05-26 08:53:20,843 | INFO | Completed stability: Random_Forest | seed=7 fold=1 | macro_f1=0.824036
+2026-05-26 08:53:20,843 | INFO | Stability: XGBoost | seed=7 fold=1/5
+2026-05-26 08:59:11,031 | INFO | Completed stability: XGBoost | seed=7 fold=1 | macro_f1=0.823879
+2026-05-26 08:59:11,173 | INFO | Stability: threshold baseline | seed=7 fold=2/5
+2026-05-26 08:59:11,536 | INFO | Stability: Logistic_Regression | seed=7 fold=2/5
+2026-05-26 08:59:26,171 | INFO | Completed stability: Logistic_Regression | seed=7 fold=2 | macro_f1=0.820856
+2026-05-26 08:59:26,172 | INFO | Stability: Random_Forest | seed=7 fold=2/5
+2026-05-26 09:09:56,585 | INFO | Completed stability: Random_Forest | seed=7 fold=2 | macro_f1=0.824142
+2026-05-26 09:09:56,585 | INFO | Stability: XGBoost | seed=7 fold=2/5
+2026-05-26 09:15:47,522 | INFO | Completed stability: XGBoost | seed=7 fold=2 | macro_f1=0.824135
+2026-05-26 09:15:47,673 | INFO | Stability: threshold baseline | seed=7 fold=3/5
+2026-05-26 09:15:48,053 | INFO | Stability: Logistic_Regression | seed=7 fold=3/5
+2026-05-26 09:16:03,285 | INFO | Completed stability: Logistic_Regression | seed=7 fold=3 | macro_f1=0.820836
+2026-05-26 09:16:03,285 | INFO | Stability: Random_Forest | seed=7 fold=3/5
+2026-05-26 09:26:39,540 | INFO | Completed stability: Random_Forest | seed=7 fold=3 | macro_f1=0.824188
+2026-05-26 09:26:39,540 | INFO | Stability: XGBoost | seed=7 fold=3/5
+2026-05-26 09:32:30,471 | INFO | Completed stability: XGBoost | seed=7 fold=3 | macro_f1=0.824073
+2026-05-26 09:32:30,637 | INFO | Stability: threshold baseline | seed=7 fold=4/5
+2026-05-26 09:32:31,002 | INFO | Stability: Logistic_Regression | seed=7 fold=4/5
+2026-05-26 09:32:45,950 | INFO | Completed stability: Logistic_Regression | seed=7 fold=4 | macro_f1=0.821334
+2026-05-26 09:32:45,950 | INFO | Stability: Random_Forest | seed=7 fold=4/5
+2026-05-26 09:43:08,128 | INFO | Completed stability: Random_Forest | seed=7 fold=4 | macro_f1=0.824795
+2026-05-26 09:43:08,128 | INFO | Stability: XGBoost | seed=7 fold=4/5
+2026-05-26 09:48:53,835 | INFO | Completed stability: XGBoost | seed=7 fold=4 | macro_f1=0.824661
+2026-05-26 09:48:53,977 | INFO | Stability: threshold baseline | seed=7 fold=5/5
+2026-05-26 09:48:54,346 | INFO | Stability: Logistic_Regression | seed=7 fold=5/5
+2026-05-26 09:49:09,384 | INFO | Completed stability: Logistic_Regression | seed=7 fold=5 | macro_f1=0.821752
+2026-05-26 09:49:09,385 | INFO | Stability: Random_Forest | seed=7 fold=5/5
+2026-05-26 09:59:40,243 | INFO | Completed stability: Random_Forest | seed=7 fold=5 | macro_f1=0.825103
+2026-05-26 09:59:40,243 | INFO | Stability: XGBoost | seed=7 fold=5/5
+2026-05-26 10:05:27,278 | INFO | Completed stability: XGBoost | seed=7 fold=5 | macro_f1=0.824977
+2026-05-26 10:05:27,752 | INFO | Stability: threshold baseline | seed=21 fold=1/5
+2026-05-26 10:05:28,107 | INFO | Stability: Logistic_Regression | seed=21 fold=1/5
+2026-05-26 10:05:41,291 | INFO | Completed stability: Logistic_Regression | seed=21 fold=1 | macro_f1=0.821112
+2026-05-26 10:05:41,292 | INFO | Stability: Random_Forest | seed=21 fold=1/5
+2026-05-26 10:15:57,830 | INFO | Completed stability: Random_Forest | seed=21 fold=1 | macro_f1=0.824498
+2026-05-26 10:15:57,831 | INFO | Stability: XGBoost | seed=21 fold=1/5
+2026-05-26 10:21:42,624 | INFO | Completed stability: XGBoost | seed=21 fold=1 | macro_f1=0.824468
+2026-05-26 10:21:42,769 | INFO | Stability: threshold baseline | seed=21 fold=2/5
+2026-05-26 10:21:43,121 | INFO | Stability: Logistic_Regression | seed=21 fold=2/5
+2026-05-26 10:21:57,846 | INFO | Completed stability: Logistic_Regression | seed=21 fold=2 | macro_f1=0.821318
+2026-05-26 10:21:57,846 | INFO | Stability: Random_Forest | seed=21 fold=2/5
+2026-05-26 10:32:14,125 | INFO | Completed stability: Random_Forest | seed=21 fold=2 | macro_f1=0.824677
+2026-05-26 10:32:14,125 | INFO | Stability: XGBoost | seed=21 fold=2/5
+2026-05-26 10:38:00,457 | INFO | Completed stability: XGBoost | seed=21 fold=2 | macro_f1=0.824470
+2026-05-26 10:38:00,609 | INFO | Stability: threshold baseline | seed=21 fold=3/5
+2026-05-26 10:38:00,972 | INFO | Stability: Logistic_Regression | seed=21 fold=3/5
+2026-05-26 10:38:15,712 | INFO | Completed stability: Logistic_Regression | seed=21 fold=3 | macro_f1=0.821797
+2026-05-26 10:38:15,713 | INFO | Stability: Random_Forest | seed=21 fold=3/5
+2026-05-26 10:48:35,774 | INFO | Completed stability: Random_Forest | seed=21 fold=3 | macro_f1=0.824948
+2026-05-26 10:48:35,774 | INFO | Stability: XGBoost | seed=21 fold=3/5
+2026-05-26 10:54:20,732 | INFO | Completed stability: XGBoost | seed=21 fold=3 | macro_f1=0.824816
+2026-05-26 10:54:20,887 | INFO | Stability: threshold baseline | seed=21 fold=4/5
+2026-05-26 10:54:21,263 | INFO | Stability: Logistic_Regression | seed=21 fold=4/5
+2026-05-26 10:54:35,870 | INFO | Completed stability: Logistic_Regression | seed=21 fold=4 | macro_f1=0.821056
+2026-05-26 10:54:35,870 | INFO | Stability: Random_Forest | seed=21 fold=4/5
+2026-05-26 11:04:57,534 | INFO | Completed stability: Random_Forest | seed=21 fold=4 | macro_f1=0.824204
+2026-05-26 11:04:57,534 | INFO | Stability: XGBoost | seed=21 fold=4/5
+2026-05-26 11:10:43,644 | INFO | Completed stability: XGBoost | seed=21 fold=4 | macro_f1=0.824059
+2026-05-26 11:10:43,787 | INFO | Stability: threshold baseline | seed=21 fold=5/5
+2026-05-26 11:10:44,141 | INFO | Stability: Logistic_Regression | seed=21 fold=5/5
+2026-05-26 11:10:59,219 | INFO | Completed stability: Logistic_Regression | seed=21 fold=5 | macro_f1=0.820570
+2026-05-26 11:10:59,219 | INFO | Stability: Random_Forest | seed=21 fold=5/5
+2026-05-26 11:21:15,213 | INFO | Completed stability: Random_Forest | seed=21 fold=5 | macro_f1=0.823958
+2026-05-26 11:21:15,213 | INFO | Stability: XGBoost | seed=21 fold=5/5
+2026-05-26 11:27:02,465 | INFO | Completed stability: XGBoost | seed=21 fold=5 | macro_f1=0.823844
+2026-05-26 11:27:02,963 | INFO | Stability: threshold baseline | seed=42 fold=1/5
+2026-05-26 11:27:03,313 | INFO | Stability: Logistic_Regression | seed=42 fold=1/5
+2026-05-26 11:27:18,016 | INFO | Completed stability: Logistic_Regression | seed=42 fold=1 | macro_f1=0.820950
+2026-05-26 11:27:18,016 | INFO | Stability: Random_Forest | seed=42 fold=1/5
+2026-05-26 11:37:40,359 | INFO | Completed stability: Random_Forest | seed=42 fold=1 | macro_f1=0.824152
+2026-05-26 11:37:40,359 | INFO | Stability: XGBoost | seed=42 fold=1/5
+2026-05-26 11:43:27,966 | INFO | Completed stability: XGBoost | seed=42 fold=1 | macro_f1=0.824153
+2026-05-26 11:43:28,114 | INFO | Stability: threshold baseline | seed=42 fold=2/5
+2026-05-26 11:43:28,485 | INFO | Stability: Logistic_Regression | seed=42 fold=2/5
+2026-05-26 11:43:43,094 | INFO | Completed stability: Logistic_Regression | seed=42 fold=2 | macro_f1=0.821157
+2026-05-26 11:43:43,095 | INFO | Stability: Random_Forest | seed=42 fold=2/5
+2026-05-26 11:54:03,005 | INFO | Completed stability: Random_Forest | seed=42 fold=2 | macro_f1=0.824486
+2026-05-26 11:54:03,005 | INFO | Stability: XGBoost | seed=42 fold=2/5
+2026-05-26 11:59:51,359 | INFO | Completed stability: XGBoost | seed=42 fold=2 | macro_f1=0.824383
+2026-05-26 11:59:51,506 | INFO | Stability: threshold baseline | seed=42 fold=3/5
+2026-05-26 11:59:51,878 | INFO | Stability: Logistic_Regression | seed=42 fold=3/5
+2026-05-26 12:00:06,898 | INFO | Completed stability: Logistic_Regression | seed=42 fold=3 | macro_f1=0.821281
+2026-05-26 12:00:06,899 | INFO | Stability: Random_Forest | seed=42 fold=3/5
+2026-05-26 12:10:26,587 | INFO | Completed stability: Random_Forest | seed=42 fold=3 | macro_f1=0.824369
+2026-05-26 12:10:26,588 | INFO | Stability: XGBoost | seed=42 fold=3/5
+2026-05-26 12:16:15,066 | INFO | Completed stability: XGBoost | seed=42 fold=3 | macro_f1=0.824098
+2026-05-26 12:16:15,225 | INFO | Stability: threshold baseline | seed=42 fold=4/5
+2026-05-26 12:16:15,577 | INFO | Stability: Logistic_Regression | seed=42 fold=4/5
+2026-05-26 12:16:30,701 | INFO | Completed stability: Logistic_Regression | seed=42 fold=4 | macro_f1=0.821136
+2026-05-26 12:16:30,701 | INFO | Stability: Random_Forest | seed=42 fold=4/5
+2026-05-26 12:26:51,395 | INFO | Completed stability: Random_Forest | seed=42 fold=4 | macro_f1=0.824789
+2026-05-26 12:26:51,396 | INFO | Stability: XGBoost | seed=42 fold=4/5
+2026-05-26 12:32:39,696 | INFO | Completed stability: XGBoost | seed=42 fold=4 | macro_f1=0.824721
+2026-05-26 12:32:39,846 | INFO | Stability: threshold baseline | seed=42 fold=5/5
+2026-05-26 12:32:40,219 | INFO | Stability: Logistic_Regression | seed=42 fold=5/5
+2026-05-26 12:32:54,934 | INFO | Completed stability: Logistic_Regression | seed=42 fold=5 | macro_f1=0.821356
+2026-05-26 12:32:54,935 | INFO | Stability: Random_Forest | seed=42 fold=5/5
+2026-05-26 12:43:19,295 | INFO | Completed stability: Random_Forest | seed=42 fold=5 | macro_f1=0.824676
+2026-05-26 12:43:19,295 | INFO | Stability: XGBoost | seed=42 fold=5/5
+2026-05-26 12:49:08,356 | INFO | Completed stability: XGBoost | seed=42 fold=5 | macro_f1=0.824424
+2026-05-26 12:49:08,819 | INFO | Stability: threshold baseline | seed=99 fold=1/5
+2026-05-26 12:49:09,164 | INFO | Stability: Logistic_Regression | seed=99 fold=1/5
+2026-05-26 12:49:23,848 | INFO | Completed stability: Logistic_Regression | seed=99 fold=1 | macro_f1=0.821318
+2026-05-26 12:49:23,849 | INFO | Stability: Random_Forest | seed=99 fold=1/5
+2026-05-26 12:59:44,638 | INFO | Completed stability: Random_Forest | seed=99 fold=1 | macro_f1=0.824695
+2026-05-26 12:59:44,638 | INFO | Stability: XGBoost | seed=99 fold=1/5
+2026-05-26 13:05:29,127 | INFO | Completed stability: XGBoost | seed=99 fold=1 | macro_f1=0.824579
+2026-05-26 13:05:29,280 | INFO | Stability: threshold baseline | seed=99 fold=2/5
+2026-05-26 13:05:29,630 | INFO | Stability: Logistic_Regression | seed=99 fold=2/5
+2026-05-26 13:05:43,851 | INFO | Completed stability: Logistic_Regression | seed=99 fold=2 | macro_f1=0.821592
+2026-05-26 13:05:43,851 | INFO | Stability: Random_Forest | seed=99 fold=2/5
+2026-05-26 13:16:01,476 | INFO | Completed stability: Random_Forest | seed=99 fold=2 | macro_f1=0.824762
+2026-05-26 13:16:01,477 | INFO | Stability: XGBoost | seed=99 fold=2/5
+2026-05-26 13:21:47,508 | INFO | Completed stability: XGBoost | seed=99 fold=2 | macro_f1=0.824522
+2026-05-26 13:21:47,656 | INFO | Stability: threshold baseline | seed=99 fold=3/5
+2026-05-26 13:21:48,026 | INFO | Stability: Logistic_Regression | seed=99 fold=3/5
+2026-05-26 13:22:02,936 | INFO | Completed stability: Logistic_Regression | seed=99 fold=3 | macro_f1=0.820672
+2026-05-26 13:22:02,936 | INFO | Stability: Random_Forest | seed=99 fold=3/5
+2026-05-26 13:32:28,591 | INFO | Completed stability: Random_Forest | seed=99 fold=3 | macro_f1=0.824022
+2026-05-26 13:32:28,591 | INFO | Stability: XGBoost | seed=99 fold=3/5
+2026-05-26 13:38:12,156 | INFO | Completed stability: XGBoost | seed=99 fold=3 | macro_f1=0.823877
+2026-05-26 13:38:12,303 | INFO | Stability: threshold baseline | seed=99 fold=4/5
+2026-05-26 13:38:12,677 | INFO | Stability: Logistic_Regression | seed=99 fold=4/5
+2026-05-26 13:38:27,630 | INFO | Completed stability: Logistic_Regression | seed=99 fold=4 | macro_f1=0.820785
+2026-05-26 13:38:27,630 | INFO | Stability: Random_Forest | seed=99 fold=4/5
+2026-05-26 13:48:44,575 | INFO | Completed stability: Random_Forest | seed=99 fold=4 | macro_f1=0.824249
+2026-05-26 13:48:44,576 | INFO | Stability: XGBoost | seed=99 fold=4/5
+2026-05-26 13:54:28,448 | INFO | Completed stability: XGBoost | seed=99 fold=4 | macro_f1=0.824201
+2026-05-26 13:54:28,610 | INFO | Stability: threshold baseline | seed=99 fold=5/5
+2026-05-26 13:54:28,978 | INFO | Stability: Logistic_Regression | seed=99 fold=5/5
+2026-05-26 13:54:43,676 | INFO | Completed stability: Logistic_Regression | seed=99 fold=5 | macro_f1=0.821485
+2026-05-26 13:54:43,676 | INFO | Stability: Random_Forest | seed=99 fold=5/5
+2026-05-26 14:05:08,247 | INFO | Completed stability: Random_Forest | seed=99 fold=5 | macro_f1=0.824599
+2026-05-26 14:05:08,247 | INFO | Stability: XGBoost | seed=99 fold=5/5
+2026-05-26 14:10:53,279 | INFO | Completed stability: XGBoost | seed=99 fold=5 | macro_f1=0.824603
+2026-05-26 14:10:53,360 | INFO | Multi-seed validation summary:
+                         model  completed_runs  accuracy_mean  accuracy_std  accuracy_min  accuracy_max  balanced_accuracy_mean  balanced_accuracy_std  balanced_accuracy_min  balanced_accuracy_max  macro_precision_mean  macro_precision_std  macro_precision_min  macro_precision_max  macro_recall_mean  macro_recall_std  macro_recall_min  macro_recall_max  macro_f1_mean  macro_f1_std  macro_f1_min  macro_f1_max  weighted_f1_mean  weighted_f1_std  weighted_f1_min  weighted_f1_max  mcc_mean  mcc_std  mcc_min  mcc_max  macro_roc_auc_ovr_mean  macro_roc_auc_ovr_std  macro_roc_auc_ovr_min  macro_roc_auc_ovr_max  macro_pr_auc_ovr_mean  macro_pr_auc_ovr_std  macro_pr_auc_ovr_min  macro_pr_auc_ovr_max
+Transparent_Threshold_Baseline              25       0.746395      0.000322      0.745978      0.747088                0.746395               0.000322               0.745978               0.747088              0.765514             0.000306             0.765057             0.766088           0.746395          0.000322          0.745978          0.747088       0.752662      0.000310      0.752274      0.753302          0.752662         0.000310         0.752274         0.753302  0.663740 0.000427 0.663180 0.664663                     NaN                    NaN                    NaN                    NaN                    NaN                   NaN                   NaN                   NaN
+           Logistic_Regression              25       0.819786      0.000363      0.819196      0.820453                0.819786               0.000363               0.819196               0.820453              0.823822             0.000372             0.823166             0.824390           0.819786          0.000363          0.819196          0.820453       0.821174      0.000365      0.820570      0.821797          0.821174         0.000365         0.820570         0.821797  0.760098 0.000486 0.759310 0.760983                0.958638               0.000112               0.958384               0.958813               0.882321              0.000323              0.881666              0.882821
+                 Random_Forest              25       0.822958      0.000320      0.822447      0.823601                0.822958               0.000320               0.822447               0.823601              0.829492             0.000318             0.829017             0.830122           0.822958          0.000320          0.822447          0.823601       0.824461      0.000318      0.823958      0.825103          0.824461         0.000318         0.823958         0.825103  0.765058 0.000426 0.764379 0.765918                0.959669               0.000105               0.959458               0.959844               0.884226              0.000314              0.883683              0.884721
+                       XGBoost              25       0.822841      0.000307      0.822347      0.823467                0.822841               0.000307               0.822347               0.823467              0.829275             0.000304             0.828792             0.829914           0.822841          0.000307          0.822347          0.823467       0.824339      0.000308      0.823844      0.824977          0.824339         0.000308         0.823844         0.824977  0.764875 0.000407 0.764217 0.765707                0.959598               0.000104               0.959388               0.959757               0.883950              0.000307              0.883425              0.884431
+2026-05-26 14:10:53,391 | INFO | Requested extended validation stages completed. Outputs: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\extended_validation

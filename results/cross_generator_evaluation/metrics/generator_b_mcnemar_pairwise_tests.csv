@@ -1,0 +1,5 @@
+model_a,model_b,model_a_only_correct,model_b_only_correct,discordant_predictions,test,statistic,p_value
+Logistic_Regression,Transparent_Threshold_Baseline,669993,396013,1066006,McNemar chi-square with continuity correction,70416.57593015424,0.0
+Random_Forest,Transparent_Threshold_Baseline,666870,408164,1075034,McNemar chi-square with continuity correction,62256.893293607456,0.0
+XGBoost,Transparent_Threshold_Baseline,670594,413822,1084416,McNemar chi-square with continuity correction,60798.942878932074,0.0
+Random_Forest,XGBoost,46436,44502,90938,McNemar chi-square with continuity correction,41.088312916492555,1.4550378496114792e-10

@@ -1,0 +1,150 @@
+FEATURE: qber
+|--- qber <= 0.04
+|   |--- qber <= 0.03
+|   |   |--- qber <= 0.00
+|   |   |   |--- class: 2
+|   |   |--- qber >  0.00
+|   |   |   |--- qber <= 0.02
+|   |   |   |   |--- class: 0
+|   |   |   |--- qber >  0.02
+|   |   |   |   |--- class: 0
+|   |--- qber >  0.03
+|   |   |--- qber <= 0.03
+|   |   |   |--- qber <= 0.03
+|   |   |   |   |--- class: 2
+|   |   |   |--- qber >  0.03
+|   |   |   |   |--- class: 2
+|   |   |--- qber >  0.03
+|   |   |   |--- qber <= 0.03
+|   |   |   |   |--- class: 2
+|   |   |   |--- qber >  0.03
+|   |   |   |   |--- class: 2
+|--- qber >  0.04
+|   |--- qber <= 0.05
+|   |   |--- qber <= 0.04
+|   |   |   |--- qber <= 0.04
+|   |   |   |   |--- class: 2
+|   |   |   |--- qber >  0.04
+|   |   |   |   |--- class: 1
+|   |   |--- qber >  0.04
+|   |   |   |--- qber <= 0.05
+|   |   |   |   |--- class: 1
+|   |   |   |--- qber >  0.05
+|   |   |   |   |--- class: 1
+|   |--- qber >  0.05
+|   |   |--- qber <= 0.06
+|   |   |   |--- qber <= 0.05
+|   |   |   |   |--- class: 1
+|   |   |   |--- qber >  0.05
+|   |   |   |   |--- class: 1
+|   |   |--- qber >  0.06
+|   |   |   |--- qber <= 0.07
+|   |   |   |   |--- class: 1
+|   |   |   |--- qber >  0.07
+|   |   |   |   |--- class: 1
+
+
+FEATURE: photon_count
+|--- photon_count <= 578.50
+|   |--- photon_count <= 475.50
+|   |   |--- photon_count <= 422.50
+|   |   |   |--- photon_count <= 381.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- photon_count >  381.50
+|   |   |   |   |--- class: 2
+|   |   |--- photon_count >  422.50
+|   |   |   |--- photon_count <= 452.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- photon_count >  452.50
+|   |   |   |   |--- class: 2
+|   |--- photon_count >  475.50
+|   |   |--- photon_count <= 521.50
+|   |   |   |--- photon_count <= 498.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- photon_count >  498.50
+|   |   |   |   |--- class: 2
+|   |   |--- photon_count >  521.50
+|   |   |   |--- photon_count <= 548.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- photon_count >  548.50
+|   |   |   |   |--- class: 3
+|--- photon_count >  578.50
+|   |--- photon_count <= 820.50
+|   |   |--- photon_count <= 719.50
+|   |   |   |--- photon_count <= 648.50
+|   |   |   |   |--- class: 3
+|   |   |   |--- photon_count >  648.50
+|   |   |   |   |--- class: 3
+|   |   |--- photon_count >  719.50
+|   |   |   |--- photon_count <= 773.50
+|   |   |   |   |--- class: 3
+|   |   |   |--- photon_count >  773.50
+|   |   |   |   |--- class: 3
+|   |--- photon_count >  820.50
+|   |   |--- photon_count <= 945.50
+|   |   |   |--- photon_count <= 876.50
+|   |   |   |   |--- class: 3
+|   |   |   |--- photon_count >  876.50
+|   |   |   |   |--- class: 1
+|   |   |--- photon_count >  945.50
+|   |   |   |--- photon_count <= 1044.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- photon_count >  1044.50
+|   |   |   |   |--- class: 0
+
+
+FEATURE: latency_ms
+|--- latency_ms <= 5.83
+|   |--- latency_ms <= 5.44
+|   |   |--- latency_ms <= 5.18
+|   |   |   |--- latency_ms <= 5.00
+|   |   |   |   |--- class: 0
+|   |   |   |--- latency_ms >  5.00
+|   |   |   |   |--- class: 0
+|   |   |--- latency_ms >  5.18
+|   |   |   |--- latency_ms <= 5.32
+|   |   |   |   |--- class: 0
+|   |   |   |--- latency_ms >  5.32
+|   |   |   |   |--- class: 0
+|   |--- latency_ms >  5.44
+|   |   |--- latency_ms <= 5.63
+|   |   |   |--- latency_ms <= 5.53
+|   |   |   |   |--- class: 0
+|   |   |   |--- latency_ms >  5.53
+|   |   |   |   |--- class: 0
+|   |   |--- latency_ms >  5.63
+|   |   |   |--- latency_ms <= 5.73
+|   |   |   |   |--- class: 3
+|   |   |   |--- latency_ms >  5.73
+|   |   |   |   |--- class: 3
+|--- latency_ms >  5.83
+|   |--- latency_ms <= 6.88
+|   |   |--- latency_ms <= 6.38
+|   |   |   |--- latency_ms <= 6.08
+|   |   |   |   |--- class: 3
+|   |   |   |--- latency_ms >  6.08
+|   |   |   |   |--- class: 1
+|   |   |--- latency_ms >  6.38
+|   |   |   |--- latency_ms <= 6.63
+|   |   |   |   |--- class: 1
+|   |   |   |--- latency_ms >  6.63
+|   |   |   |   |--- class: 1
+|   |--- latency_ms >  6.88
+|   |   |--- latency_ms <= 7.36
+|   |   |   |--- latency_ms <= 7.10
+|   |   |   |   |--- class: 2
+|   |   |   |--- latency_ms >  7.10
+|   |   |   |   |--- class: 2
+|   |   |--- latency_ms >  7.36
+|   |   |   |--- latency_ms <= 7.63
+|   |   |   |   |--- class: 2
+|   |   |   |--- latency_ms >  7.63
+|   |   |   |   |--- class: 2
+
+
+FEATURE: abort_flag
+|--- abort_flag <= 0.50
+|   |--- class: 0
+|--- abort_flag >  0.50
+|   |--- class: 2
+

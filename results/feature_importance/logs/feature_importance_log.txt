@@ -1,0 +1,30 @@
+2026-05-26 16:49:08,794 | INFO | Loading Generator-A dataset: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\data\qf_log_dataset.csv
+2026-05-26 16:49:13,350 | INFO | Loaded 5,000,000 records. Class counts: {'normal': 1250000, 'partial_intercept_resend': 1250000, 'detector_blind': 1250000, 'fiber_tap': 1250000}
+2026-05-26 16:49:14,747 | INFO | Using a stratified unseen holdout diagnostic sample of 100,000 records: {'normal': 25000, 'partial_intercept_resend': 25000, 'detector_blind': 25000, 'fiber_tap': 25000}
+2026-05-26 16:49:19,333 | INFO | Loaded the three saved Generator-A trained models.
+2026-05-26 16:49:20,828 | INFO | Computing held-out permutation importance: Logistic Regression | 100,000 records | 10 repeats.
+2026-05-26 16:49:21,384 | INFO | Permutation importance completed: Logistic Regression | 0.56 seconds.
+2026-05-26 16:49:21,385 | INFO | Computing held-out permutation importance: Random Forest | 100,000 records | 10 repeats.
+2026-05-26 16:50:03,009 | INFO | Permutation importance completed: Random Forest | 41.62 seconds.
+2026-05-26 16:50:03,010 | INFO | Computing held-out permutation importance: XGBoost | 100,000 records | 10 repeats.
+2026-05-26 16:50:32,728 | INFO | Permutation importance completed: XGBoost | 29.72 seconds.
+2026-05-26 16:50:33,945 | INFO | Diagnostic sample reference performance:
+              model  diagnostic_samples  accuracy  macro_f1      mcc
+Logistic_Regression              100000   0.81954  0.820942 0.759758
+      Random_Forest              100000   0.82269  0.824193 0.764692
+            XGBoost              100000   0.82245  0.823931 0.764343
+2026-05-26 16:50:33,948 | INFO | Held-out permutation importance:
+              model      feature  importance_mean  importance_std  rank_within_model
+Logistic_Regression         qber         0.304713        0.001116                  1
+Logistic_Regression   latency_ms         0.262407        0.001109                  2
+Logistic_Regression photon_count         0.090123        0.001077                  3
+Logistic_Regression   abort_flag         0.009579        0.000413                  4
+      Random_Forest         qber         0.295044        0.001010                  1
+      Random_Forest   latency_ms         0.242200        0.001136                  2
+      Random_Forest photon_count         0.147946        0.000938                  3
+      Random_Forest   abort_flag         0.002377        0.000233                  4
+            XGBoost         qber         0.300199        0.001046                  1
+            XGBoost   latency_ms         0.257574        0.001004                  2
+            XGBoost photon_count         0.136176        0.000794                  3
+            XGBoost   abort_flag         0.003462        0.000497                  4
+2026-05-26 16:50:33,948 | INFO | Feature contribution analysis completed. Outputs: C:\Users\madha\OneDrive\Desktop\QKD QF-Log Forensic\results\feature_importance

@@ -1,0 +1,10 @@
+Primary interpretation should use heldout_permutation_importance_macro_f1.csv.
+This table reports the decrease in macro F1 when one feature is permuted on
+the same unseen holdout diagnostic sample for all three trained ML models.
+
+supplementary_native_model_importance.csv is supplementary only because
+coefficient magnitude, Random Forest impurity importance, and XGBoost gain
+are model-specific quantities and should not be compared as the same scale.
+
+The transparent threshold baseline is excluded from learned feature importance
+because its feature use is explicitly defined by its decision rules.
