@@ -1,0 +1,123 @@
+QF-LOG Formula-Based Dataset Generation Model
+================================================
+
+Observable ML features:
+    qber, photon_count, latency_ms, abort_flag
+
+Class labels:
+    normal, partial_intercept_resend, detector_blind, fiber_tap
+
+Important interpretation:
+    photon_count is the detected photon/click count per generated QKD frame.
+    latency_ms is a controller-level processing/buffering delay model; it is
+    not optical time-of-flight.
+    abort_flag is generated from an operational probability model; it is not
+    assigned directly from the class label.
+    fiber_tap models added optical attenuation/signal diversion, not copying
+    an unknown qubit.
+    detector_blind models a monitored response-suppression condition and is
+    an explicit simulator assumption rather than a universal hardware trace.
+
+1. Channel and detected-count model
+-----------------------------------
+Let:
+    N      = pulses per frame = 16000
+    mu     = mean photon number
+    alpha  = attenuation in dB/km
+    L      = fiber length in km
+    a_tap  = added tap attenuation in dB
+    eta_d  = detector efficiency
+    r_DB   = detector response factor (1 outside detector_blind)
+    Y0     = background yield probability
+
+Baseline channel transmission:
+    eta_ch,0 = 10^[-(alpha * L) / 10]
+
+Attack-adjusted channel transmission:
+    eta_ch = 10^[-(alpha * L + a_tap) / 10]
+
+Attack-adjusted total detection efficiency:
+    eta = eta_d * eta_ch * r_DB
+
+Observed click probability:
+    p_click = 1 - (1 - Y0) * exp(-mu * eta)
+
+Detected photon/count feature:
+    photon_count ~ Binomial(N, p_click)
+
+2. QBER model
+-------------
+Let e_d be the optical misalignment/error parameter.
+
+Signal click probability:
+    p_sig = 1 - exp(-mu * eta)
+
+Baseline error probability:
+    q_base = [0.5 * Y0 + e_d * p_sig] / p_click
+
+Normal:
+    q_true = q_base
+
+Partial intercept-resend:
+    q_true = (1 - f_IR) * q_base + f_IR * 0.25
+
+Fiber tap:
+    q_true = q_base
+    No arbitrary QBER increase is imposed; attenuation changes signal and
+    background composition through the detection equation.
+
+Detector blind monitoring proxy:
+    q_true = q_base + delta_DB
+
+Observed error events:
+    error_count ~ Binomial(photon_count, q_true)
+
+Observed QBER feature:
+    qber = error_count / photon_count, when photon_count > 0
+
+3. Controller latency model
+---------------------------
+Binary entropy:
+    H2(q) = -q*log2(q) - (1-q)*log2(1-q)
+
+Reference count is the expected detected count without attack effect in the
+same baseline frame configuration:
+    C_ref = N * [1 - (1-Y0)*exp(-mu*eta_d*eta_ch,0)]
+
+Observed loss fraction:
+    R_loss = max(0, 1 - photon_count / C_ref)
+
+Controller-level latency:
+    latency_ms = T0 + k_EC*H2(qber) + k_loss*R_loss + epsilon_T
+
+where epsilon_T is normally distributed controller jitter.
+
+4. Abort-flag model
+-------------------
+Abort probability uses independent controller hazard terms:
+
+    p_Q = sigmoid(s_Q * (qber - tau_Q))
+    p_L = sigmoid(s_L * (R_loss - tau_L))
+    p_T = sigmoid(s_T * (latency_ms - tau_T))
+
+    P(abort_flag = 1)
+      = 1 - (1-p0)*(1-p_Q)*(1-p_L)*(1-p_T)
+
+    abort_flag ~ Bernoulli(P(abort_flag = 1))
+
+5. Source basis and modelling limits
+------------------------------------
+- The weak-coherent-pulse loss/detection and QBER observation structure is
+  based on practical decoy-state QKD modelling:
+  Ma, Qi, Zhao, and Lo, Practical Decoy State for Quantum Key Distribution,
+  Physical Review A, 72, 012326, 2005.
+- The 0.25 attacked-pulse error contribution is the standard BB84
+  intercept-resend disturbance under random basis choice.
+- The detector_blind class is motivated by practical detector-control attacks
+  using bright illumination:
+  Lydersen et al., Hacking commercial quantum cryptography systems by
+  tailored bright illumination, Nature Photonics, 4, 686-689, 2010.
+- The detector-response factor, controller latency equation, and abort
+  probability rule are explicitly configured simulation assumptions. They
+  must not be described as directly measured hardware laws unless validated
+  with experimental QKD logs.

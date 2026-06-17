@@ -1,0 +1,62 @@
+Generator-B Simulation and Cross-Generator Shift Model
+====================================================
+
+Observable ML features:
+    qber, photon_count, latency_ms, abort_flag
+
+Class labels:
+    normal, partial_intercept_resend, detector_blind, fiber_tap
+
+Dataset design:
+    Records: 5,000,000
+    Frames per session: 500
+    Pulses per frame: 16,000
+
+Core rule:
+    Generator-B uses the same observable feature equations as Generator-A.
+    Generator-B alters hidden operational parameter distributions and adds
+    documented temporal drift; it does not directly shift feature values.
+
+Temporal drift:
+    d_(s,t) = rho * d_(s,t-1) + epsilon_(s,t)
+    rho = 0.96
+
+Channel and photon-count model:
+    baseline_loss_db = alpha * L + channel_loss_drift_db
+    eta_ch,0 = 10^[-baseline_loss_db / 10]
+    eta_ch = 10^[-(baseline_loss_db + a_tap) / 10]
+    eta = eta_d * eta_ch * r_DB
+    p_click = 1 - (1 - Y0) * exp(-mu * eta)
+    photon_count ~ Binomial(N, p_click)
+
+QBER model:
+    p_sig = 1 - exp(-mu * eta)
+    q_base = [0.5*Y0 + e_d*p_sig] / p_click
+    normal and fiber_tap: q_true = q_base
+    partial_intercept_resend:
+        q_true = (1 - f_IR)*q_base + f_IR*0.25
+    detector_blind proxy:
+        q_true = q_base + delta_DB
+    error_count ~ Binomial(photon_count, q_true)
+    qber = error_count / photon_count when photon_count > 0
+
+Controller latency model:
+    R_loss = max(0, 1 - photon_count / expected_reference_count)
+    H2(q) = -q*log2(q) - (1-q)*log2(1-q)
+    latency_ms = T0 + controller_drift_ms
+                 + k_EC*H2(qber) + k_loss*R_loss + epsilon_T
+    k_EC = 5.5
+    k_loss = 2.8
+
+Abort model:
+    p_Q = sigmoid(90.0 * (qber - 0.105))
+    p_L = sigmoid(18.0 * (R_loss - 0.55))
+    p_T = sigmoid(3.0 * (latency_ms - 8.0))
+    P(abort=1) = 1 - (1-p0)(1-p_Q)(1-p_L)(1-p_T)
+    abort_flag ~ Bernoulli(P(abort=1))
+
+Interpretation:
+    Latency and abort are controller-level simulation rules.
+    Fiber tap represents optical attenuation/signal diversion.
+    Detector blind represents a monitored response-suppression proxy.
+    No latent metadata parameter is an ML input feature.

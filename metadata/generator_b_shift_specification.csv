@@ -1,0 +1,13 @@
+component,generator_a,generator_b,purpose
+Feature equations,Generator-A equations,Same equations,Only latent conditions are shifted
+Data structure,Independent frames,500-frame sessions,Temporal robustness evaluation
+Fiber length (km),"N(10.0,2.5), [3,20]","Profile means 12.0, 12.5, 18.0; [4,28]",Unseen link conditions
+Attenuation (dB/km),"N(0.20,0.01), [0.17,0.23]","Profile means 0.205-0.210; [0.17,0.25]",Channel variability
+Detector efficiency,"N(0.20,0.018), [0.14,0.26]","Profile means 0.166-0.190; [0.10,0.25]",Hardware variability
+Background yield,"N(5e-5,1e-5), [1e-5,9e-5]","Profile means 6e-5-7.5e-5; [1e-5,1.5e-4]",Noise variability
+Misalignment error,"N(0.018,0.006), [0.005,0.040]","Profile means 0.022-0.028; [0.005,0.070]",Calibration variation
+Temporal drift,Not applied,"AR(1) channel, detector, alignment and controller drift",Time-dependent instability
+Partial intercept-resend,"0.03 + 0.42 Beta(1.5,2.8)","0.015 + 0.34 Beta(1.4,3.0)",Weaker and more overlapping activity
+Fiber-tap attenuation,"0.10 + 2.50 Beta(1.5,2.2)","0.04 + 1.80 Beta(1.4,2.8)",Subtler attenuation shift
+Detector-blind response,"0.05 + 0.90 Beta(1.4,2.2)","0.18 + 0.80 Beta(1.7,1.9)",Reduced separability
+Abort decision rule,Configured controller rule,Identical rule,No label-specific policy shift
