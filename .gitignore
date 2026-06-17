@@ -1,0 +1,22 @@
+﻿# Large generated datasets
+data/
+*.csv.gz
+
+# Large model files
+*.joblib
+*.pkl
+*.pickle
+*.model
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.venv/
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
