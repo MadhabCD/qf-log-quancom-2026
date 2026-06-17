@@ -1,0 +1,6 @@
+﻿{
+  "fixed_holdout_seed": 42,
+  "generator_a_seed": "see_generation_script",
+  "generator_b_seed": "see_generation_script",
+  "repeated_validation_seeds": "see_evaluation_script"
+}
